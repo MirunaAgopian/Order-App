@@ -4,9 +4,9 @@ _A stylish food delivery platform inspired by Lieferando. Browse meals, add them
 
 ### 🚀 Features
 
-🛒 Dynamic Cart Interaction: Users can increase or decrease item quantities and watch the total price update instantly—no page reloads needed.
-🍽️ Browse mock restaurant dishes
-✏️ Add meals to your cart and place simulated orders
+- 🛒 Dynamic Cart Interaction: Users can increase or decrease item quantities and watch the total price update instantly—no page reloads needed.
+- 🍽️ Browse mock restaurant dishes
+- ✏️ Add meals to your cart and place simulated orders
 💾 Local Storage: Notes are saved locally via localStorage
 
 ### 🛠️ Technologies Used
