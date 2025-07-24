@@ -38,7 +38,7 @@ Add dishes, increase and decrease their amount, remove dishes from cart and plac
 Refresh to verify localStorage persistence
 
 📁 Project Structure
-text
+<pre>
 Order-App/
 ├── index.html
 ├── script.js
@@ -54,6 +54,7 @@ Order-App/
     └── fonts
     └── img
 └── README.md
+</pre>
 
 🤝 Contributing
 Contributions are welcome! If you find a bug or want to suggest enhancements, feel free to open an issue or pull request.
