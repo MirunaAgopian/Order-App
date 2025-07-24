@@ -20,6 +20,7 @@ Prerequisites
 A modern web browser
 A code editor like Visual Studio Code
 
+<pre>
 Installation
 # Clone the repository
 git clone https://github.com/MirunaAgopian/Order-App
@@ -38,7 +39,7 @@ Add dishes, increase and decrease their amount, remove dishes from cart and plac
 Refresh to verify localStorage persistence
 
 📁 Project Structure
-<pre>
+
 Order-App/
 ├── index.html
 ├── script.js
