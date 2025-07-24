@@ -1,6 +1,6 @@
 ### 📦 Order-App
 
-_A stylish food delivery platform inspired by Lieferando. Browse meals, place orders, and simulate real-time delivery—all with a custom frontend experience!_
+_A stylish food delivery platform inspired by Lieferando. Browse meals, add them to the shopping cart and place orders - all with a custom frontend experience!_
 
 ### 🚀 Features
 
