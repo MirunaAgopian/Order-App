@@ -66,7 +66,7 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 ### 🙌 Acknowledgments
 Inspired by classic order and delivery apps
 
-Built with love and curiosity by Miruna-Alexandra 💙
+Built with love and curiosity by Miruna Agopian 💙
 
 
 If you want to add a visual preview, a project logo, or even embed a live demo link later on, I’d be thrilled to help you set that up too!
