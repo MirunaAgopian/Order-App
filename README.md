@@ -10,9 +10,9 @@ _A stylish food delivery platform inspired by Lieferando. Browse meals, place or
 💾 Local Storage: Notes are saved locally via localStorage
 
 ### 🛠️ Technologies Used
-HTML
-CSS
-JavaScript
+- HTML
+- CSS
+- JavaScript
 
 🏁 Getting Started
 
