@@ -2,23 +2,23 @@
 
 _A stylish food delivery platform inspired by Lieferando. Browse meals, place orders, and simulate real-time delivery—all with a custom frontend experience!_
 
-🚀 Features
+### 🚀 Features
 
 🛒 Dynamic Cart Interaction: Users can increase or decrease item quantities and watch the total price update instantly—no page reloads needed.
 🍽️ Browse mock restaurant dishes
 ✏️ Add meals to your cart and place simulated orders
 💾 Local Storage: Notes are saved locally via localStorage
 
-🛠️ Technologies Used
+### 🛠️ Technologies Used
 HTML
 CSS
 JavaScript
 
 🏁 Getting Started
 
-Prerequisites
-A modern web browser
-A code editor like Visual Studio Code
+### Prerequisites
+- A modern web browser
+- A code editor like Visual Studio Code
 
 <pre>
 Installation
@@ -57,13 +57,13 @@ Order-App/
 └── README.md
 </pre>
 
-🤝 Contributing
+### 🤝 Contributing
 Contributions are welcome! If you find a bug or want to suggest enhancements, feel free to open an issue or pull request.
 
-📄 License
+### 📄 License
 This project is licensed under the MIT License — see the LICENSE file for details.
 
-🙌 Acknowledgments
+### 🙌 Acknowledgments
 Inspired by classic order and delivery apps
 
 Built with love and curiosity by Miruna-Alexandra 💙
