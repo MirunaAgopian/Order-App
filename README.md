@@ -20,13 +20,15 @@ _A stylish food delivery platform inspired by Lieferando. Browse meals, add them
 - A modern web browser
 - A code editor like Visual Studio Code
 
-<pre>
 Installation
 # Clone the repository
+<pre>
 git clone https://github.com/MirunaAgopian/Order-App
-
+</pre>
 # Navigate into the project
+<pre>
 cd Order-App
+</pre>
 
 🔧 Usage
 Simply open index.html in your browser and start adding the desired dishes to the shopping cart.
@@ -39,7 +41,7 @@ Add dishes, increase and decrease their amount, remove dishes from cart and plac
 Refresh to verify localStorage persistence
 
 📁 Project Structure
-
+<pre>
 Order-App/
 ├── index.html
 ├── script.js
