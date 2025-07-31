@@ -4,7 +4,7 @@ function getDishesTemplate(dish, index, category) {
             <div id="dish_container_${category}_${index}" class="dish-container">
               <h2>${dish.name}</h2>
               <p>${dish.description}</p>
-              <p class="price">${dish.price}&euro;</p>
+              <p class="price">${dish.price.toFixed(2).replace('.', ',')}&euro;</p>
               <img
                 onclick='moveDishesToBasket("${category}", ${index})'
                 id='add_btn'
@@ -63,7 +63,7 @@ function getBasketTotal(subtotalValue, totalAmount){
                 </tr>
                 <tr>
                     <td>Lieferkosten</td>
-                    <td>5 &euro;</td>
+                    <td>5,00 &euro;</td>
                 </tr>
                 <tr class='total'>
                     <td>Gesamt</td>

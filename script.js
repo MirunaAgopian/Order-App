@@ -6,8 +6,8 @@ function renderDishes() {
 
     for(let category in dishes){
         container.innerHTML +=`<span id='${category}' class='category-name'>${formatCategoryName(category)}</span>`
-
         let dishList = dishes[category];
+
         for(let index = 0; index < dishList.length; index++){
             let dish = dishList[index];
             container.innerHTML += getDishesTemplate(dish, index, category);
@@ -24,6 +24,7 @@ function formatCategoryName(category) {
 
     return names[category] || category;
 }
+
 
 function renderBasketDishes(suppressPlaceholder = false){
     renderBasketDishesPC(suppressPlaceholder);
@@ -42,7 +43,7 @@ function renderBasketDishesPC(suppressPlaceholder  = false){
 
     if(basketDishes.length > 0){
         let subtotalValue = calculateSubtotal();
-        desktopContainer.innerHTML += getBasketTotal(subtotalValue, (parseFloat(subtotalValue) + 5).toFixed(2));
+        desktopContainer.innerHTML += getBasketTotal(subtotalValue, (parseFloat(subtotalValue) + 5).toFixed(2).replace('.', ','));
     } else if(!suppressPlaceholder){
         desktopContainer.innerHTML += getDesktopPlaceholder();
     }
@@ -60,14 +61,14 @@ function renderBasketDishesMobile(suppressPlaceholder  = false){
 
     if(basketDishes.length > 0){
         let subtotalValue = calculateSubtotal();
-        mobileContainer.innerHTML += getBasketTotal(subtotalValue, (parseFloat(subtotalValue) + 5).toFixed(2));
+        mobileContainer.innerHTML += getBasketTotal(subtotalValue, (parseFloat(subtotalValue) + 5).toFixed(2).replace('.', ','));
     } else if(!suppressPlaceholder){
         mobileContainer.innerHTML += getMobilePlaceholder();
     }
 }
 
 function getFromLocalStorage(){
-    let savedSelectedDish = JSON.parse(localStorage.getItem('selectedDishes')) || [];
+    let savedSelectedDish = JSON.parse(localStorage.getItem('selectedDishes') || '[]');
     basketDishes = savedSelectedDish;
     return savedSelectedDish;
 }
@@ -98,7 +99,7 @@ function moveDishesToBasket(category, index){
 
 
 function removeDish(basketIndex){
-    let basketItem = JSON.parse(localStorage.getItem('selectedDishes')) || [];
+    let basketItem = JSON.parse(localStorage.getItem('selectedDishes') || '[]') ;
     basketItem.splice(basketIndex, 1);
 
     localStorage.setItem('selectedDishes', JSON.stringify(basketItem));
@@ -183,7 +184,7 @@ function updatePricePerDish(basketIndex){
     let subtotal = amount * price;
     basketDishes[basketIndex].totalPrice = subtotal;
 
-    let formattedSubtotal = subtotal.toFixed(2);
+    let formattedSubtotal = subtotal.toFixed(2).replace('.', ',');
 
     let desktopPriceCell = document.getElementById(`price_pc_${basketIndex}`);
     if (desktopPriceCell) {
@@ -209,36 +210,44 @@ function calculateSubtotal(){
             subtotal += parseFloat(dish.totalPrice);
         }
     }
-    return subtotal.toFixed(2);
+    return subtotal.toFixed(2).replace('.', ',');
 }
 
 function calculateTotalPrice(price, quantity = 1){
-    return(price * quantity).toFixed(2);
+    return(price * quantity).toFixed(2).replace('.', ',');
 }
 
 
 //Notification functions
 
 function sendUserNotificationPC(){
-    localStorage.setItem('selectedDishes', JSON.stringify([]));
-    selectedDishes = [];
+   let selectedDishes = getFromLocalStorage();
+   let desktopContainer = document.getElementById('desktop_basket_container');
 
-    renderBasketDishes(true);
-
-    let desktopContainer = document.getElementById('desktop_basket_container');
-    desktopContainer.innerHTML += notificationTemplate();
+    if(selectedDishes.length === 0){
+        desktopContainer.innerHTML = getDesktopPlaceholder();
+    } else {
+        selectedDishes = [];
+        saveToLocalStorage(selectedDishes);
+        renderBasketDishes(true);
+        desktopContainer.innerHTML += notificationTemplate();
+    }
 
 }
 
 
 function sendUserNotificationMobile(){
-    localStorage.setItem('selectedDishes', JSON.stringify([]));
-    basketDishes = [];
-
-    renderBasketDishes(true);
-
+    let selectedDishes = getFromLocalStorage();
     let mobileBasketContainer = document.getElementById('mobile_basket_container');
-    mobileBasketContainer.innerHTML += notificationTemplate();
+
+    if(selectedDishes.length === 0){
+        mobileBasketContainer.innerHTML = getMobilePlaceholder();
+    } else {
+        selectedDishes = [];
+        saveToLocalStorage(selectedDishes);
+        renderBasketDishes(true);
+        mobileBasketContainer.innerHTML += notificationTemplate();
+    }
 }
 
 
